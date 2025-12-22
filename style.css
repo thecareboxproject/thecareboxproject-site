@@ -61,7 +61,7 @@ nav a {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 0.8s ease-in-out;
   z-index: 0;
 }
 
@@ -99,6 +99,33 @@ nav a {
 
 .btn:hover {
   background: var(--soft-pink);
+}
+
+/* HERO SLIDER BUTTONS */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
 }
 
 /* SECTION */
@@ -185,5 +212,10 @@ footer p {
 
   .hero h2 {
     font-size: 2.4rem;
+  }
+
+  .prev, .next {
+    font-size: 1.5rem;
+    padding: 6px 12px;
   }
 }

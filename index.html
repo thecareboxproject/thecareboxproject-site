@@ -25,11 +25,24 @@
     </div>
   </nav>
 
-  <!-- HERO WITH MANUAL SLIDER -->
+  <!-- HERO CAROUSEL -->
   <div class="hero">
-    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&w=1200');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1598514983722-0a6ecf0d5b71?crop=entropy&cs=tinysrgb&fit=max&w=1200');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1611599531497-7c56bb9b7f82?crop=entropy&cs=tinysrgb&fit=max&w=1200');"></div>
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Care box 1">
+        </div>
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1598514983722-0a6ecf0d5b71?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Women receiving care">
+        </div>
+        <div class="carousel-slide">
+          <img src="https://images.unsplash.com/photo-1611599531497-7c56bb9b7f82?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Care box donation">
+        </div>
+      </div>
+      <!-- Arrows -->
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
 
     <div class="hero-text">
       <h2>Care, dignity, and support — delivered.</h2>
@@ -39,10 +52,6 @@
       </p>
       <a href="#" class="btn">Support the Mission</a>
     </div>
-
-    <!-- Slider buttons -->
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
   </div>
 
   <!-- MISSION -->
@@ -86,26 +95,29 @@
     <p>Built with care 🤍</p>
   </footer>
 
-  <!-- HERO SLIDER SCRIPT -->
+  <!-- CAROUSEL SCRIPT -->
   <script>
-    const slides = document.querySelectorAll('.hero-slide');
-    const prevBtn = document.querySelector('.prev');
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
     const nextBtn = document.querySelector('.next');
-    let current = 0;
+    const prevBtn = document.querySelector('.prev');
+    const slideWidth = slides[0].getBoundingClientRect().width;
 
-    function showSlide(index) {
-      slides.forEach(slide => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
-
-    prevBtn.addEventListener('click', () => {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
+    // arrange slides next to each other
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + 'px';
     });
 
+    let currentIndex = 0;
+
     nextBtn.addEventListener('click', () => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
+      currentIndex = (currentIndex + 1) % slides.length;
+      track.style.transform = 'translateX(-' + slides[currentIndex].style.left + ')';
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      track.style.transform = 'translateX(-' + slides[currentIndex].style.left + ')';
     });
   </script>
 

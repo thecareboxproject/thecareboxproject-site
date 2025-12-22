@@ -49,8 +49,6 @@ nav a {
   padding: 0 8%;
   position: relative;
   overflow: hidden;
-  background-color: var(--black);
-  color: white;
 }
 
 .carousel-container {
@@ -79,12 +77,12 @@ nav a {
   object-fit: cover;
 }
 
-/* slider buttons */
+/* Arrows */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.4);
   color: white;
   border: none;
   font-size: 2rem;
@@ -98,14 +96,33 @@ nav a {
   background: rgba(0,0,0,0.7);
 }
 
-.prev {
-  left: 20px;
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
 }
 
-.next {
-  right: 20px;
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
 }
 
+.dot.active {
+  background: white;
+}
+
+/* Hero text */
 .hero-text {
   position: absolute;
   left: 8%;
@@ -113,6 +130,7 @@ nav a {
   transform: translateY(-50%);
   z-index: 3;
   max-width: 520px;
+  color: white;
 }
 
 .hero h2 {
@@ -215,20 +233,8 @@ footer p {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .two-col {
-    grid-template-columns: 1fr;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h2 {
-    font-size: 2.4rem;
-  }
-
-  .carousel-btn {
-    font-size: 1.5rem;
-    padding: 6px 12px;
-  }
+  .two-col { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+  .hero h2 { font-size: 2.4rem; }
+  .carousel-btn { font-size: 1.5rem; padding: 6px 12px; }
 }

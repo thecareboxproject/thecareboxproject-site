@@ -25,11 +25,11 @@
     </div>
   </nav>
 
-  <!-- HERO WITH SLIDER -->
+  <!-- HERO WITH MANUAL SLIDER -->
   <div class="hero">
-    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1526256262350-7da7584cf5eb');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600185367041-94f4374a2342');"></div>
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&w=1200');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1598514983722-0a6ecf0d5b71?crop=entropy&cs=tinysrgb&fit=max&w=1200');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1611599531497-7c56bb9b7f82?crop=entropy&cs=tinysrgb&fit=max&w=1200');"></div>
 
     <div class="hero-text">
       <h2>Care, dignity, and support — delivered.</h2>
@@ -39,6 +39,10 @@
       </p>
       <a href="#" class="btn">Support the Mission</a>
     </div>
+
+    <!-- Slider buttons -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
 
   <!-- MISSION -->
@@ -85,15 +89,24 @@
   <!-- HERO SLIDER SCRIPT -->
   <script>
     const slides = document.querySelectorAll('.hero-slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
     let current = 0;
 
-    function nextSlide() {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
     }
 
-    setInterval(nextSlide, 4000); // 4 seconds per slide
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
   </script>
 
 </body>

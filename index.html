@@ -1,88 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>The Care Box Project</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <header class="nav">
     <h1 class="logo">The Care Box Project</h1>
     <nav>
-      <a href="#mission">Our Mission</a>
-      <a href="#impact">Get Involved</a>
-      <a href="#contact">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Our Mission</a>
+      <a href="#">Get Involved</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO SECTION WITH SLIDER -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1588776814546-83c2f14f77ab');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e');"></div>
-    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600185367041-94f4374a2342');"></div>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-text">
-      <h2>Care, dignity, and support — delivered.</h2>
-      <p>We provide thoughtfully curated care boxes with essential sanitary and wellness products to women and communities worldwide.</p>
-      <a href="#mission" class="btn btn-primary">Support the Mission</a>
-    </div>
+    <h2>Care, dignity, and support — delivered.</h2>
+    <p>
+      We provide thoughtfully curated care boxes with essential sanitary
+      and wellness products to women and communities around the world.
+    </p>
+    <button>Learn More</button>
   </section>
 
-  <!-- MISSION SECTION -->
-  <section class="mission" id="mission">
-    <div class="mission-content">
-      <span class="label">Our Mission</span>
-      <h3>We believe access to care should never be a privilege.</h3>
-      <p>The Care Box Project exists to restore dignity, comfort, and confidence through carefully assembled care packages — meeting people where they are, when they need it most.</p>
-    </div>
-    <div class="mission-image"></div>
+  <!-- MISSION -->
+  <section class="mission">
+    <h3>We Do Things Differently</h3>
+    <p>
+      The Care Box Project is built on empathy, access, and respect.
+      Our boxes go beyond products — they send reassurance, dignity,
+      and care to those who need it most.
+    </p>
   </section>
 
-  <!-- IMPACT SECTION -->
-  <section class="impact" id="impact">
-    <span class="label">Our Impact</span>
-    <h3>What We Do</h3>
-    <div class="impact-cards">
-      <div class="impact-card">
-        <h4>Essential Care</h4>
-        <p>Sanitary products, hygiene items, and daily necessities.</p>
-      </div>
-      <div class="impact-card">
-        <h4>Women-Centered</h4>
-        <p>Designed with compassion, dignity, and real needs in mind.</p>
-      </div>
-      <div class="impact-card">
-        <h4>Global Reach</h4>
-        <p>Supporting communities locally and around the world.</p>
-      </div>
-    </div>
+  <!-- CTA -->
+  <section class="cta">
+    <h3>Want to Help?</h3>
+    <p>Donate, partner with us, or help us spread the word.</p>
+    <button>Get Involved</button>
   </section>
 
   <!-- FOOTER -->
-  <footer id="contact">
-    <p>© 2025 The Care Box Project | Built with care 🤍</p>
+  <footer>
+    <p>© The Care Box Project</p>
   </footer>
 
-  <!-- HERO SLIDER SCRIPT -->
-  <script>
-    const slides = document.querySelectorAll('.hero-slide');
-    let current = 0;
-
-    function nextSlide() {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }
-
-    setInterval(nextSlide, 4000);
-  </script>
 </body>
 </html>
+

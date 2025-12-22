@@ -22,7 +22,7 @@ body {
   line-height: 1.6;
 }
 
-/* NAV */
+/* NAVIGATION */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -51,8 +51,8 @@ body {
   font-size: 1.5rem;
 }
 
-/* HERO SLIDER */
-.hero-slider {
+/* HERO */
+.hero {
   position: relative;
   height: 85vh;
   display: flex;
@@ -62,31 +62,47 @@ body {
   overflow: hidden;
 }
 
-.slider {
+.hero-slide {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  z-index: 0;
 }
 
-.slide.active {
+.hero-slide.active {
   opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
 }
 
 .hero-text {
   position: relative;
-  z-index: 2;
   max-width: 520px;
+  z-index: 2;
+}
+
+.hero-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 /* BUTTONS */
@@ -184,7 +200,7 @@ footer {
     text-align: center;
   }
 
-  .hero h2 {
+  .hero-text h2 {
     font-size: 2.4rem;
   }
 }

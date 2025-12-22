@@ -11,24 +11,23 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAVIGATION -->
   <header class="nav">
     <h1 class="logo">The Care Box Project</h1>
     <nav>
-      <a href="#about">About</a>
       <a href="#mission">Our Mission</a>
       <a href="#impact">Get Involved</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO SLIDER -->
-  <section class="hero-slider">
-    <div class="slider">
-      <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1588776814546-83c2f14f77ab');"></div>
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e');"></div>
-      <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600185367041-94f4374a2342');"></div>
-    </div>
+  <!-- HERO SECTION WITH SLIDER -->
+  <section class="hero">
+    <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1588776814546-83c2f14f77ab');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1607746882042-944635dfe10e');"></div>
+    <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600185367041-94f4374a2342');"></div>
+
+    <div class="hero-overlay"></div>
 
     <div class="hero-text">
       <h2>Care, dignity, and support — delivered.</h2>
@@ -37,7 +36,7 @@
     </div>
   </section>
 
-  <!-- MISSION -->
+  <!-- MISSION SECTION -->
   <section class="mission" id="mission">
     <div class="mission-content">
       <span class="label">Our Mission</span>
@@ -47,7 +46,7 @@
     <div class="mission-image"></div>
   </section>
 
-  <!-- IMPACT -->
+  <!-- IMPACT SECTION -->
   <section class="impact" id="impact">
     <span class="label">Our Impact</span>
     <h3>What We Do</h3>
@@ -74,7 +73,7 @@
 
   <!-- HERO SLIDER SCRIPT -->
   <script>
-    const slides = document.querySelectorAll('.slide');
+    const slides = document.querySelectorAll('.hero-slide');
     let current = 0;
 
     function nextSlide() {
@@ -83,9 +82,7 @@
       slides[current].classList.add('active');
     }
 
-    // Change slide every 4 seconds
     setInterval(nextSlide, 4000);
   </script>
-
 </body>
 </html>

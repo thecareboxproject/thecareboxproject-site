@@ -1,84 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>The Care Box Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google Font -->
+  <title>The Care Box Project</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --pink: #f3c6cf;
+      --soft-pink: #fae6ea;
+      --cream: #f9f7f4;
+      --brown: #5a4a42;
+      --black: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 8%;
+      background: white;
+    }
+
+    nav h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--black);
+      margin-left: 24px;
+      font-size: 0.9rem;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.35)
+      ),
+      url("https://images.unsplash.com/photo-1526256262350-7da7584cf5eb");
+      background-size: cover;
+      background-position: center;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 0 8%;
+      color: white;
+    }
+
+    .hero-text {
+      max-width: 520px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      background: var(--pink);
+      color: var(--black);
+      text-decoration: none;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--soft-pink);
+    }
+
+    /* SECTION */
+    section {
+      padding: 96px 8%;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 24px;
+    }
+
+    .label {
+      display: inline-block;
+      background: var(--soft-pink);
+      color: var(--brown);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      margin-bottom: 16px;
+    }
+
+    /* IMAGE BLOCK */
+    .image-box {
+      background-image: url("https://images.unsplash.com/photo-1607746882042-944635dfe10e");
+      background-size: cover;
+      background-position: center;
+      height: 420px;
+      border-radius: 12px;
+    }
+
+    /* IMPACT CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .card h4 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 12px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 48px 8%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <!-- NAV -->
-  <header class="nav">
-    <h1 class="logo">The Care Box Project</h1>
-    <nav>
-      <a href="#">Home</a>
+  <nav>
+    <h1>The Care Box Project</h1>
+    <div>
+      <a href="#">About</a>
       <a href="#">Our Mission</a>
       <a href="#">Get Involved</a>
       <a href="#">Contact</a>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <div class="hero">
     <div class="hero-text">
-      <h2>Care. Dignity. Support.</h2>
+      <h2>Care, dignity, and support — delivered.</h2>
       <p>
-        We provide thoughtfully curated care boxes filled with essential
-        sanitary and health products — supporting women and communities
-        around the world.
+        We provide thoughtfully curated care boxes with essential
+        sanitary and wellness products to women and communities worldwide.
       </p>
-      <a class="btn" href="#">Learn More</a>
+      <a href="#" class="btn">Support the Mission</a>
     </div>
-  </section>
+  </div>
 
   <!-- MISSION -->
-  <section class="mission">
-    <h3>Our Mission</h3>
-    <p>
-      The Care Box Project exists to restore dignity, comfort, and care
-      through accessible health and sanitary products.  
-      We believe no one should go without basic necessities.
-    </p>
+  <section class="two-col">
+    <div>
+      <span class="label">Our Mission</span>
+      <h3>We believe access to care should never be a privilege.</h3>
+      <p>
+        The Care Box Project exists to restore dignity, comfort, and
+        confidence through carefully assembled care packages —
+        meeting people where they are, when they need it most.
+      </p>
+    </div>
+    <div class="image-box"></div>
   </section>
 
   <!-- IMPACT -->
-  <section class="impact">
-    <div class="impact-box">
-      <h4>Women-Centered Care</h4>
-      <p>Products chosen with empathy, respect, and real needs in mind.</p>
-    </div>
+  <section>
+    <span class="label">Our Impact</span>
+    <h3>What We Do</h3>
 
-    <div class="impact-box">
-      <h4>Global Reach</h4>
-      <p>Supporting individuals and communities wherever care is needed.</p>
+    <div class="cards">
+      <div class="card">
+        <h4>Essential Care</h4>
+        <p>Sanitary products, hygiene items, and daily necessities.</p>
+      </div>
+      <div class="card">
+        <h4>Women-Centered</h4>
+        <p>Designed with compassion, dignity, and real needs in mind.</p>
+      </div>
+      <div class="card">
+        <h4>Global Reach</h4>
+        <p>Supporting communities locally and around the world.</p>
+      </div>
     </div>
-
-    <div class="impact-box">
-      <h4>Human Dignity</h4>
-      <p>Because care should never feel clinical or impersonal.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h3>Want to Help?</h3>
-    <p>Whether through donations, volunteering, or spreading awareness.</p>
-    <a class="btn dark" href="#">Get Involved</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <p>© 2025 The Care Box Project</p>
+    <p>Built with care 🤍</p>
   </footer>
 
 </body>
 </html>
-
-

@@ -1,125 +1,234 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+:root {
+  --pink: #f3c6cf;
+  --soft-pink: #fae6ea;
+  --cream: #f9f7f4;
+  --brown: #5a4a42;
+  --black: #1a1a1a;
+}
 
-  <title>The Care Box Project</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cream);
+  color: var(--black);
+  line-height: 1.6;
+}
 
-  <link rel="stylesheet" href="style.css">
-</head>
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  background: white;
+}
 
-<body>
+nav h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
 
-  <!-- NAV -->
-  <nav>
-    <h1>The Care Box Project</h1>
-    <div>
-      <a href="#">About</a>
-      <a href="#">Our Mission</a>
-      <a href="#">Get Involved</a>
-      <a href="#">Contact</a>
-    </div>
-  </nav>
+nav a {
+  text-decoration: none;
+  color: var(--black);
+  margin-left: 24px;
+  font-size: 0.9rem;
+}
 
-  <!-- HERO CAROUSEL -->
-  <div class="hero">
-    <div class="carousel-container">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Care box 1">
-        </div>
-        <div class="carousel-slide">
-          <img src="https://images.unsplash.com/photo-1598514983722-0a6ecf0d5b71?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Women receiving care">
-        </div>
-        <div class="carousel-slide">
-          <img src="https://images.unsplash.com/photo-1611599531497-7c56bb9b7f82?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Care box donation">
-        </div>
-      </div>
-      <!-- Arrows -->
-      <button class="carousel-btn prev">&#10094;</button>
-      <button class="carousel-btn next">&#10095;</button>
-    </div>
+/* HERO / CAROUSEL */
+.hero {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--black);
+  color: white;
+}
 
-    <div class="hero-text">
-      <h2>Care, dignity, and support — delivered.</h2>
-      <p>
-        We provide thoughtfully curated care boxes with essential
-        sanitary and wellness products to women and communities worldwide.
-      </p>
-      <a href="#" class="btn">Support the Mission</a>
-    </div>
-  </div>
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  flex: 1;
+}
 
-  <!-- MISSION -->
-  <section class="two-col">
-    <div>
-      <span class="label">Our Mission</span>
-      <h3>We believe access to care should never be a privilege.</h3>
-      <p>
-        The Care Box Project exists to restore dignity, comfort, and
-        confidence through carefully assembled care packages —
-        meeting people where they are, when they need it most.
-      </p>
-    </div>
-    <div class="image-box"></div>
-  </section>
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  height: 100%;
+}
 
-  <!-- IMPACT -->
-  <section>
-    <span class="label">Our Impact</span>
-    <h3>What We Do</h3>
+.carousel-slide {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
 
-    <div class="cards">
-      <div class="card">
-        <h4>Essential Care</h4>
-        <p>Sanitary products, hygiene items, and daily necessities.</p>
-      </div>
-      <div class="card">
-        <h4>Women-Centered</h4>
-        <p>Designed with compassion, dignity, and real needs in mind.</p>
-      </div>
-      <div class="card">
-        <h4>Global Reach</h4>
-        <p>Supporting communities locally and around the world.</p>
-      </div>
-    </div>
-  </section>
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 The Care Box Project</p>
-    <p>Built with care 🤍</p>
-  </footer>
+/* slider buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
 
-  <!-- CAROUSEL SCRIPT -->
-  <script>
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
-    const slideWidth = slides[0].getBoundingClientRect().width;
+.carousel-btn:hover {
+  background: rgba(0,0,0,0.7);
+}
 
-    // arrange slides next to each other
-    slides.forEach((slide, index) => {
-      slide.style.left = slideWidth * index + 'px';
-    });
+.prev {
+  left: 20px;
+}
 
-    let currentIndex = 0;
+.next {
+  right: 20px;
+}
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      track.style.transform = 'translateX(-' + slides[currentIndex].style.left + ')';
-    });
+.hero-text {
+  position: absolute;
+  left: 8%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  max-width: 520px;
+}
 
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      track.style.transform = 'translateX(-' + slides[currentIndex].style.left + ')';
-    });
-  </script>
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+}
 
-</body>
-</html>
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--pink);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--soft-pink);
+}
+
+/* SECTION */
+section {
+  padding: 96px 8%;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
+
+.label {
+  display: inline-block;
+  background: var(--soft-pink);
+  color: var(--brown);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+/* IMAGE BLOCK */
+.image-box {
+  background-image: url("https://images.unsplash.com/photo-1607746882042-944635dfe10e");
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  border-radius: 12px;
+}
+
+/* IMPACT CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.card h4 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  color: white;
+  padding: 48px 8%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer p {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+  }
+}

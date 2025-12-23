@@ -1,128 +1,177 @@
- {
+:root {
+  --pink: #f3c6cf;
+  --soft-pink: #fae6ea;
+  --cream: #f9f7f4;
+  --brown: #5a4a42;
+  --black: #1a1a1a;
+}
+
+/* RESET */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #fff;
-  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cream);
+  color: var(--black);
   line-height: 1.6;
 }
 
 /* NAV */
-.nav {
+nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 3rem;
+  padding: 24px 8%;
   background: white;
 }
 
-.logo {
-  font-family: "Playfair Display", serif;
+nav h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
+  font-weight: 600;
 }
 
-.nav a {
-  margin-left: 1.5rem;
+nav a {
   text-decoration: none;
-  color: #1a1a1a;
-  font-size: 0.95rem;
+  color: var(--black);
+  margin-left: 24px;
+  font-size: 0.9rem;
 }
 
 /* HERO */
 .hero {
-  background: #f7c7d9;
-  min-height: 80vh;
+  background: linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url("https://images.unsplash.com/photo-1526256262350-7da7584cf5eb");
+  background-size: cover;
+  background-position: center;
+  height: 85vh;
   display: flex;
   align-items: center;
-  padding: 4rem;
+  padding: 0 8%;
+  color: white;
 }
 
 .hero-text {
-  max-width: 600px;
+  max-width: 520px;
 }
 
 .hero h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  margin-bottom: 16px;
 }
 
 .hero p {
-  margin-bottom: 2rem;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+  margin-bottom: 32px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn {
-  background: white;
-  color: #1a1a1a;
-  padding: 0.8rem 1.8rem;
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--pink);
+  color: var(--black);
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 40px;
   font-size: 0.9rem;
   transition: 0.3s;
 }
 
 .btn:hover {
-  opacity: 0.8;
+  background: var(--soft-pink);
 }
 
-.btn.dark {
-  background: #3a2c2c;
-  color: white;
+/* SECTIONS */
+section {
+  padding: 96px 8%;
 }
 
-/* MISSION */
-.mission {
-  padding: 4rem 3rem;
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-}
-
-.mission h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* IMPACT */
-.impact {
+.two-col {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 3rem;
-  background: #fafafa;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
 }
 
-.impact-box {
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+}
+
+.label {
+  display: inline-block;
+  background: var(--soft-pink);
+  color: var(--brown);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-bottom: 16px;
+}
+
+/* IMAGE BLOCK */
+.image-box {
+  background-image: url("https://images.unsplash.com/photo-1607746882042-944635dfe10e");
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  border-radius: 12px;
+}
+
+/* IMPACT CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.card {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* CTA */
-.cta {
-  background: #f4e1d2;
+  padding: 32px;
+  border-radius: 16px;
   text-align: center;
-  padding: 4rem 2rem;
 }
 
-.cta h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.card h4 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 12px;
 }
 
 /* FOOTER */
 footer {
-  background: #1a1a1a;
+  background: var(--black);
   color: white;
-  text-align: center;
-  padding: 1.5rem;
+  padding: 48px 8%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer p {
   font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
 }

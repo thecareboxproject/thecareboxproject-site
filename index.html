@@ -9,183 +9,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --pink: #f3c6cf;
-      --soft-pink: #fae6ea;
-      --cream: #f9f7f4;
-      --brown: #5a4a42;
-      --black: #1a1a1a;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--cream);
-      color: var(--black);
-      line-height: 1.6;
-    }
-
-    /* NAV */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 24px 8%;
-      background: white;
-    }
-
-    nav h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--black);
-      margin-left: 24px;
-      font-size: 0.9rem;
-    }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.35)
-      ),
-      url("https://images.unsplash.com/photo-1526256262350-7da7584cf5eb");
-      background-size: cover;
-      background-position: center;
-      height: 85vh;
-      display: flex;
-      align-items: center;
-      padding: 0 8%;
-      color: white;
-    }
-
-    .hero-text {
-      max-width: 520px;
-    }
-
-    .hero h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 32px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: var(--pink);
-      color: var(--black);
-      text-decoration: none;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: var(--soft-pink);
-    }
-
-    /* SECTION */
-    section {
-      padding: 96px 8%;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem;
-      margin-bottom: 24px;
-    }
-
-    .label {
-      display: inline-block;
-      background: var(--soft-pink);
-      color: var(--brown);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      margin-bottom: 16px;
-    }
-
-    /* IMAGE BLOCK */
-    .image-box {
-      background-image: url("https://images.unsplash.com/photo-1607746882042-944635dfe10e");
-      background-size: cover;
-      background-position: center;
-      height: 420px;
-      border-radius: 12px;
-    }
-
-    /* IMPACT CARDS */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 48px;
-    }
-
-    .card {
-      background: white;
-      padding: 32px;
-      border-radius: 16px;
-      text-align: center;
-    }
-
-    .card h4 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 12px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--black);
-      color: white;
-      padding: 48px 8%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    footer p {
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h2 {
-        font-size: 2.4rem;
-      }
-    }
-  </style>
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -219,22 +44,26 @@
       <span class="label">Our Mission</span>
       <h3>We believe access to care should never be a privilege.</h3>
       <p>
-        The CaThe Care Box Project exists to restore dignity, comfort, and confidence
-        through thoughtfully assembled care packages that address essential 
-        wellness and hygiene needs. Women and marginalized communities are 
-        disproportionately affected by limited access to basic care, often forced to
-        navigate systems that overlook or undervalue their well-being.
-
-        Founded in Bellevue, The Care Box Project began as a local response to a 
-        widespread and often invisible issue. We believe that access to care should
-        never be a privilege, and that essential products — particularly those 
-        related to women’s health — are fundamental to safety, stability, and self-worth.
-
-        Through community-driven outreach and intentional distribution, we aim 
-        to reduce barriers to care while fostering a sense of dignity and support. As
-        we grow, our mission remains rooted in compassion, equity, and impact,
-        with the long-term goal of expanding our reach nationally and advocating 
-        for a future where no one is left without the care they deserve.
+        The Care Box Project exists to restore dignity, comfort, and confidence
+        through thoughtfully assembled care packages that address essential
+        wellness and hygiene needs. Women and marginalized communities are
+        disproportionately affected by limited access to basic care, often
+        forced to navigate systems that overlook or undervalue their well-being.
+      </p>
+      <p>
+        Founded in Bellevue, The Care Box Project began as a local response to a
+        widespread and often invisible issue. We believe that access to care
+        should never be a privilege, and that essential products — particularly
+        those related to women’s health — are fundamental to safety, stability,
+        and self-worth.
+      </p>
+      <p>
+        Through community-driven outreach and intentional distribution, we aim
+        to reduce barriers to care while fostering a sense of dignity and
+        support. As we grow, our mission remains rooted in compassion, equity,
+        and impact, with the long-term goal of expanding our reach nationally
+        and advocating for a future where no one is left without the care they
+        deserve.
       </p>
     </div>
     <div class="image-box"></div>
